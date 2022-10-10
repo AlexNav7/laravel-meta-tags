@@ -129,11 +129,15 @@ class MetaTag
      */
     public function tag($key, $value = '')
     {
-        return $this->createTag([
-            'name' => $key,
-            'property' => $key,
-            'content' => $value ?: Arr::get($this->metas, $key, ''),
-        ]);
+        if(Arr::get($this->metas, $key) != null){
+            return $this->createTag([
+                'name' => $key,
+                'property' => $key,
+                'content' => $value ?: Arr::get($this->metas, $key, ''),
+            ]);
+        }
+        return null;
+
     }
 
     /**
