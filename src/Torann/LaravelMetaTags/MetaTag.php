@@ -319,7 +319,7 @@ class MetaTag
             }
         }
 
-        $replace  = array(':', '-', '.', ';', '→', '[', ']', '(', ')', '|', '"', ''');
+        $replace  = array(':', '-', '.', ';', '→', '[', ']', '(', ')', '|', '"');
         $text = str_replace($replace, '', $text);
         
         $length = strlen($text);
