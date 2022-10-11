@@ -319,6 +319,9 @@ class MetaTag
             }
         }
 
+        $replace  = array(':', '-', '.', ';', '→', '[', ']', '(', ')', '|');
+        $text = str_replace($replace, '', $text);
+        
         $length = strlen($text);
 
         if ($length <= (int) $limit) {
@@ -331,7 +334,7 @@ class MetaTag
             $text = substr($text, 0, $space);
         }
 
-        return $text . '...';
+        return $text;
     }
 
     /**
